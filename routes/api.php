@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -11,3 +12,4 @@ Route::get('/hello', function () {
     return response()->json(['message' => 'Hello, World!']);
 });
 Route::get('index', [App\Http\Controllers\HomePageController::class, 'index']);
+Route::post('login', [AuthController::class, 'login'])->name('login');
